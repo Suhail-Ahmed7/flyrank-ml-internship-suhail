@@ -350,8 +350,66 @@
 </section>
 
     <section id="method">
-      <h2>Methods</h2>
-    </section>
+  <h2>Methods</h2>
+
+  <h3>Baseline</h3>
+
+  <p>
+    The baseline ranks webpages from highest to lowest February
+    click-through rate.
+  </p>
+
+  <p>
+    This provides a simple and interpretable benchmark that the
+    machine-learning model must outperform.
+  </p>
+
+  <h3>Machine-learning model</h3>
+
+  <p>
+    Logistic Regression was selected because it is suitable for binary
+    classification and its feature coefficients can be interpreted.
+  </p>
+
+  <p>
+    The six February features were standardized before training so that
+    differences in feature scale did not dominate the model.
+  </p>
+
+  <h3>Evaluation metrics</h3>
+
+  <p>
+    The project focuses on ranking quality because the practical goal is to
+    identify which webpages should be reviewed first.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Precision@20:</strong> the percentage of actual declines among
+      the 20 highest-ranked webpages.
+    </li>
+    <li>
+      <strong>Precision@50:</strong> the percentage of actual declines among
+      the 50 highest-ranked webpages.
+    </li>
+    <li>
+      <strong>Average Precision:</strong> ranking quality across the full
+      precision-recall curve.
+    </li>
+  </ul>
+
+  <h3>Model comparison</h3>
+
+  <p>
+    The CTR baseline and Logistic Regression were evaluated on exactly the
+    same unseen test rows using the same metrics.
+  </p>
+
+  <p>
+    The simpler baseline was preferred when the machine-learning model did
+    not produce a measurable improvement.
+  </p>
+</section>
 
     <section id="validation">
       <h2>Validation and Leakage Controls</h2>
