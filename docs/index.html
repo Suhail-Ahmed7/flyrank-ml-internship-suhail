@@ -412,8 +412,87 @@
 </section>
 
     <section id="validation">
-      <h2>Validation and Leakage Controls</h2>
-    </section>
+  <h2>Validation and Leakage Controls</h2>
+
+  <h3>Client-grouped holdout</h3>
+
+  <p>
+    The data was split by client rather than by individual webpage.
+  </p>
+
+  <p>
+    This prevented webpages from the same client appearing in both the
+    training and test sets.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <strong>15</strong>
+      Training clients
+    </div>
+
+    <div class="metric">
+      <strong>4</strong>
+      Unseen test clients
+    </div>
+
+    <div class="metric">
+      <strong>0</strong>
+      Client overlap
+    </div>
+
+    <div class="metric">
+      <strong>1,671</strong>
+      Test webpages
+    </div>
+  </div>
+
+  <p>
+    The training set contained 22,032 webpages, while the test set contained
+    1,671 webpages from four completely unseen clients.
+  </p>
+
+  <h3>Time-based leakage prevention</h3>
+
+  <p>
+    All model features came from February 2026.
+  </p>
+
+  <p>
+    March information was used only to create the later decline label and
+    was not included as a model feature.
+  </p>
+
+  <h3>Identifier leakage prevention</h3>
+
+  <p>
+    Client and content identifiers were retained only for grouping,
+    auditing and displaying anonymized results.
+  </p>
+
+  <p>
+    They were not used as predictive features.
+  </p>
+
+  <h3>Missing-value check</h3>
+
+  <p>
+    The final modelling dataset contained no missing values across the six
+    selected features.
+  </p>
+
+  <h3>Reproducibility</h3>
+
+  <p>
+    A fixed random seed of 42 was used for the grouped split and model
+    training.
+  </p>
+
+  <div class="highlight">
+    The final audit confirmed zero client overlap, February-only features,
+    no missing model values and identical test rows for both methods.
+  </div>
+</section>
 
     <section id="results">
       <h2>Results</h2>
