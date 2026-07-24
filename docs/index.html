@@ -601,8 +601,113 @@
 </section>
 
     <section id="recommendations">
-      <h2>Ranked Recommendations</h2>
-    </section>
+  <h2>Ranked Recommendations</h2>
+
+  <h3>Final ranking method</h3>
+
+  <p>
+    The final decision-support queue ranks webpages from highest to lowest
+    February CTR.
+  </p>
+
+  <p>
+    This baseline was selected because it achieved slightly higher average
+    precision than Logistic Regression while remaining simpler and easier
+    to explain.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <strong>20</strong>
+      Pages reviewed
+    </div>
+
+    <div class="metric">
+      <strong>20</strong>
+      Later declines
+    </div>
+
+    <div class="metric">
+      <strong>100%</strong>
+      Observed Precision@20
+    </div>
+  </div>
+
+  <h3>Example ranked queue</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Anonymized webpage</th>
+        <th>Priority score</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>content_352d9fcaa95cc585</td>
+        <td>0.5000</td>
+        <td>High CTR on low volume — verify stability</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>content_a2a6bb5f54f80474</td>
+        <td>0.3333</td>
+        <td>High CTR on low volume — verify stability</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>content_d91a26c47a64ab72</td>
+        <td>0.3333</td>
+        <td>High CTR on low volume — verify stability</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>content_f6b1edbea759eb74</td>
+        <td>0.3333</td>
+        <td>High CTR on low volume — verify stability</td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>content_323e818c13804f5f</td>
+        <td>0.3333</td>
+        <td>High CTR on low volume — verify stability</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight">
+    Most top-ranked webpages had very low traffic volume. A small number of
+    clicks can create a high CTR, so these pages should be investigated
+    rather than automatically refreshed.
+  </div>
+
+  <h3>Recommended review workflow</h3>
+
+  <ol>
+    <li>Check whether the page has enough impressions and clicks for a stable CTR.</li>
+    <li>Review its recent traffic and ranking trend.</li>
+    <li>Check for seasonality or changes in search demand.</li>
+    <li>Inspect content freshness, relevance and technical issues.</li>
+    <li>Compare the page with competing or overlapping content.</li>
+    <li>Choose monitoring, updating or no action after human review.</li>
+  </ol>
+
+  <h3>Intended use</h3>
+
+  <p>
+    The queue helps a content team decide which webpages to investigate
+    first. It does not automatically determine that a page should be
+    rewritten, deleted or refreshed.
+  </p>
+</section>
 
     <section id="limitations">
       <h2>Limitations</h2>
