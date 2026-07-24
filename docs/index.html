@@ -495,8 +495,110 @@
 </section>
 
     <section id="results">
-      <h2>Results</h2>
-    </section>
+  <h2>Results</h2>
+
+  <p>
+    The test set had a decline base rate of 23.22%. This means that without
+    useful ranking information, approximately 23 out of every 100 test
+    webpages would be expected to decline.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <strong>100%</strong>
+      Baseline Precision@20
+    </div>
+
+    <div class="metric">
+      <strong>98%</strong>
+      Baseline Precision@50
+    </div>
+
+    <div class="metric">
+      <strong>0.8755</strong>
+      Baseline Average Precision
+    </div>
+
+    <div class="metric">
+      <strong>0.8619</strong>
+      Logistic Regression Average Precision
+    </div>
+  </div>
+
+  <h3>Baseline versus model</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Precision@20</th>
+        <th>Precision@50</th>
+        <th>Average Precision</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>February CTR baseline</td>
+        <td>100%</td>
+        <td>98%</td>
+        <td>0.8755</td>
+      </tr>
+
+      <tr>
+        <td>Logistic Regression</td>
+        <td>100%</td>
+        <td>98%</td>
+        <td>0.8619</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight">
+    Logistic Regression did not outperform the simpler CTR baseline.
+    Its average precision was 0.0136 lower.
+  </div>
+
+  <h3>Feature evidence</h3>
+
+  <p>
+    February CTR had the largest positive Logistic Regression coefficient,
+    making it the strongest ranking signal among the six selected features.
+  </p>
+
+  <p>
+    When CTR was removed, model average precision fell from 0.8619 to
+    0.4231. This shows that the model depended heavily on CTR rather than
+    discovering several equally strong signals.
+  </p>
+
+  <h3>Error analysis</h3>
+
+  <p>
+    At a classification threshold of 0.50, the model produced:
+  </p>
+
+  <ul>
+    <li>1,252 true negatives</li>
+    <li>172 true positives</li>
+    <li>31 false positives</li>
+    <li>216 false negatives</li>
+  </ul>
+
+  <p>
+    Reviewing individual errors showed that low-volume pages can receive
+    high scores because a small number of clicks can create a large CTR.
+    This finding informed the warning labels used in the final review queue.
+  </p>
+
+  <h3>Interpretation</h3>
+
+  <p>
+    The result does not show that high CTR causes future click decline.
+    It only shows that February CTR was a strong ranking signal in this
+    specific grouped holdout and time period.
+  </p>
+</section>
 
     <section id="recommendations">
       <h2>Ranked Recommendations</h2>
