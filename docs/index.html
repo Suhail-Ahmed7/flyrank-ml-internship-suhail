@@ -786,8 +786,56 @@
 </section>
 
     <section id="conclusion">
-      <h2>Conclusion</h2>
-    </section>
+  <h2>Conclusion</h2>
+
+  <p>
+    This capstone investigated whether February search and engagement
+    signals could help rank webpages that later experienced lower average
+    daily clicks in March.
+  </p>
+
+  <p>
+    The analysis used 23,703 webpages from 19 anonymized clients and a
+    client-grouped holdout with four completely unseen test clients.
+  </p>
+
+  <p>
+    The February CTR baseline achieved:
+  </p>
+
+  <ul>
+    <li>100% Precision@20</li>
+    <li>98% Precision@50</li>
+    <li>0.8755 Average Precision</li>
+  </ul>
+
+  <p>
+    Logistic Regression achieved the same Precision@20 and Precision@50,
+    but a slightly lower Average Precision of 0.8619.
+  </p>
+
+  <div class="highlight">
+    The machine-learning model did not outperform the simpler baseline.
+    Therefore, the final ranked review queue uses February CTR.
+  </div>
+
+  <p>
+    This result shows that a more complex model is not automatically better
+    than a simple and interpretable rule.
+  </p>
+
+  <p>
+    The final queue can help content teams prioritize webpages for manual
+    investigation. However, it should not be used as an automatic refresh
+    decision.
+  </p>
+
+  <p>
+    Overall, the project provides directional evidence that February CTR
+    can support review prioritization within this dataset, validation split
+    and February-to-March 2026 time period.
+  </p>
+</section>
 
     <section id="acknowledgements">
       <h2>Acknowledgements</h2>
