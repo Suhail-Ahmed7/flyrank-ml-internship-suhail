@@ -278,8 +278,76 @@
 </section>
 
     <section id="data">
-      <h2>Dataset and Time Windows</h2>
-    </section>
+  <h2>Dataset and Time Windows</h2>
+
+  <p>
+    This project uses anonymized webpage performance data from the FlyRank
+    internship warehouse.
+  </p>
+
+  <p>
+    The analysis began with 23,742 webpage records. After removing rows that
+    could not be used safely for modelling, 23,703 rows remained.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <strong>23,703</strong>
+      Modelling rows
+    </div>
+
+    <div class="metric">
+      <strong>19</strong>
+      Anonymized clients
+    </div>
+
+    <div class="metric">
+      <strong>6</strong>
+      February features
+    </div>
+
+    <div class="metric">
+      <strong>39.45%</strong>
+      Overall decline rate
+    </div>
+  </div>
+
+  <h3>Feature window</h3>
+
+  <p>
+    Only February 2026 information was used as model input.
+  </p>
+
+  <p>The six features were:</p>
+
+  <ul>
+    <li>Average daily impressions</li>
+    <li>Average daily clicks</li>
+    <li>Average search position</li>
+    <li>Average daily sessions</li>
+    <li>Engagement rate</li>
+    <li>Click-through rate</li>
+  </ul>
+
+  <h3>Outcome window</h3>
+
+  <p>
+    March 2026 data was used only to create the later outcome label.
+  </p>
+
+  <p>
+    A webpage was labelled as a decline when its March average daily clicks
+    were lower than its February average daily clicks.
+  </p>
+
+  <h3>Privacy protection</h3>
+
+  <p>
+    The analysis uses anonymized client and content identifiers. No client
+    names, domains, private queries, access tokens or raw warehouse exports
+    are published.
+  </p>
+</section>
 
     <section id="method">
       <h2>Methods</h2>
