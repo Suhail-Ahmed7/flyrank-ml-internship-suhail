@@ -710,8 +710,80 @@
 </section>
 
     <section id="limitations">
-      <h2>Limitations</h2>
-    </section>
+  <h2>Limitations</h2>
+
+  <h3>Limited time window</h3>
+
+  <p>
+    The analysis uses February 2026 features and a March 2026 outcome.
+    Performance may differ during other months because of seasonality,
+    changing search demand or unusual traffic patterns.
+  </p>
+
+  <h3>Limited unseen clients</h3>
+
+  <p>
+    The test set contained four unseen clients. This supports honest
+    validation, but it is not enough to claim that the same performance
+    will occur for every client.
+  </p>
+
+  <h3>Single grouped split</h3>
+
+  <p>
+    The results come from one client-grouped holdout. Future work should
+    repeat the analysis across multiple grouped splits to measure result
+    stability.
+  </p>
+
+  <h3>Strong dependence on CTR</h3>
+
+  <p>
+    Logistic Regression relied heavily on February CTR. Removing CTR
+    reduced average precision from 0.8619 to 0.4231.
+  </p>
+
+  <h3>Low-volume instability</h3>
+
+  <p>
+    Many top-ranked webpages had very low impressions and clicks. A small
+    number of clicks can create an unusually high CTR.
+  </p>
+
+  <p>
+    A production workflow should include a minimum-volume rule or an
+    uncertainty warning.
+  </p>
+
+  <h3>Binary target limitation</h3>
+
+  <p>
+    The target only records whether March average daily clicks were lower
+    than February average daily clicks.
+  </p>
+
+  <p>It does not measure:</p>
+
+  <ul>
+    <li>The size of the decline</li>
+    <li>Whether the decline was temporary</li>
+    <li>Whether seasonality caused the decline</li>
+    <li>Whether the page actually required a content update</li>
+  </ul>
+
+  <h3>No causal claim</h3>
+
+  <p>
+    The analysis identifies predictive relationships. It does not prove
+    that high CTR causes future decline or that refreshing a flagged page
+    will improve performance.
+  </p>
+
+  <div class="highlight">
+    The results should be used as decision support for human review, not as
+    an automatic content-refresh system.
+  </div>
+</section>
 
     <section id="conclusion">
       <h2>Conclusion</h2>
