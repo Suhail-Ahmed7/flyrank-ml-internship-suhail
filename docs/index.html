@@ -227,8 +227,55 @@
 </section>
 
     <section id="problem">
-      <h2>Problem Statement</h2>
-    </section>
+  <h2>Problem Statement</h2>
+
+  <p>
+    Content teams may manage thousands of webpages but have limited time
+    for manual review. They need a practical way to identify which pages
+    deserve attention first.
+  </p>
+
+  <blockquote>
+    Can February search and engagement signals help rank webpages that are
+    likely to experience lower average daily clicks in March?
+  </blockquote>
+
+  <p>
+    The goal of this project is not to automatically decide that a page
+    must be refreshed, deleted or rewritten.
+  </p>
+
+  <p>
+    Instead, the project creates a ranked review queue that helps content
+    teams investigate potentially declining pages more efficiently.
+  </p>
+
+  <h3>Decision supported</h3>
+
+  <p>
+    The output supports a simple operational decision:
+    which webpages should a content team review first?
+  </p>
+
+  <h3>Unit of analysis</h3>
+
+  <p>
+    Each row represents one anonymized webpage belonging to one anonymized
+    client.
+  </p>
+
+  <h3>Target</h3>
+
+  <p>
+    The binary target records whether a webpage had lower average daily
+    clicks in March 2026 than in February 2026.
+  </p>
+
+  <p>
+    A target value of 1 means that average daily clicks declined. A target
+    value of 0 means that they stayed the same or increased.
+  </p>
+</section>
 
     <section id="data">
       <h2>Dataset and Time Windows</h2>
