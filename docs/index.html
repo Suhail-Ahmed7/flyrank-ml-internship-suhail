@@ -1,6 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+  :root {
+    --primary: #2563eb;
+    --accent: #0f766e;
+    --text: #111827;
+    --muted: #4b5563;
+    --background: #f8fafc;
+    --card: #ffffff;
+    --border: #e5e7eb;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+  }
+
+  header {
+    padding: 72px 24px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    text-align: center;
+  }
+
+  header h1 {
+    max-width: 900px;
+    margin: 16px auto;
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.15;
+  }
+
+  header p {
+    max-width: 760px;
+    margin: 10px auto;
+    font-size: 1.05rem;
+  }
+
+  main {
+    max-width: 960px;
+    margin: -32px auto 60px;
+    padding: 0 20px;
+  }
+
+  section {
+    margin-bottom: 24px;
+    padding: 34px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    color: var(--primary);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  h3 {
+    margin-top: 28px;
+    color: var(--accent);
+  }
+
+  p,
+  li {
+    color: var(--muted);
+  }
+
+  strong {
+    color: var(--text);
+  }
+
+  blockquote {
+    margin: 24px 0;
+    padding: 18px 22px;
+    background: #eff6ff;
+    border-left: 5px solid var(--primary);
+    border-radius: 6px;
+    color: var(--text);
+  }
+
+  table {
+    width: 100%;
+    margin: 24px 0;
+    border-collapse: collapse;
+    background: white;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+
+  th {
+    background: #eff6ff;
+    color: var(--text);
+  }
+
+  .highlight {
+    padding: 20px;
+    background: #ecfdf5;
+    border-left: 5px solid var(--accent);
+    border-radius: 6px;
+  }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .metric {
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .metric strong {
+    display: block;
+    color: var(--primary);
+    font-size: 1.8rem;
+  }
+
+  footer {
+    padding: 30px 20px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 50px 18px;
+    }
+
+    section {
+      padding: 24px 20px;
+    }
+
+    main {
+      margin-top: -20px;
+    }
+  }
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,8 +191,40 @@
 
   <main>
     <section id="abstract">
-      <h2>Abstract</h2>
-    </section>
+  <h2>Abstract</h2>
+
+  <p>
+    This capstone examines whether February search and engagement signals
+    can help prioritize webpages that later experience lower average daily
+    clicks in March.
+  </p>
+
+  <p>
+    The analysis uses 23,703 webpages from 19 anonymized clients. Six
+    February-only features were evaluated using a client-grouped holdout,
+    ensuring that all four test clients were unseen during model training.
+  </p>
+
+  <p>
+    A simple February click-through rate baseline was compared with
+    Logistic Regression. Both methods achieved 100% Precision@20 and 98%
+    Precision@50. The CTR baseline achieved slightly higher average
+    precision: 0.8755 compared with 0.8619 for Logistic Regression.
+  </p>
+
+  <div class="highlight">
+    The simpler CTR baseline performed slightly better than the
+    machine-learning model. Therefore, the final recommendation queue uses
+    February CTR as its ranking signal.
+  </div>
+
+  <p>
+    The final output is a ranked decision-support queue with warnings for
+    low-volume pages where CTR may be unstable. The results are
+    observational and specific to this dataset, validation split and the
+    February-to-March 2026 period.
+  </p>
+</section>
 
     <section id="problem">
       <h2>Problem Statement</h2>
